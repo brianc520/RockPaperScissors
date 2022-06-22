@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissor Shoot!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <h1> Instructions: </h1>
+    <p> A classic two-person game. Players start each round by saying, “rock, paper, scissors, shoot!” On “shoot,” each player presses either r for rock, p for paper, or s for scissors. Rock crushes scissors, scissors cut paper, and paper covers rock. See who wins each round, Best out of 3! </p>
+    <ul>
+        Press r for rock
+        <br>
+        Press p for paper
+        <br>
+        Press s for scissor
+    </ul>
+    <br>
+
+    <div>
+        <p id="directions-text">Press r, p or s to start playing!</p>
+        <p id="userchoice-text"></p>
+        <p id="computerchoice-text"></p>
+        <p id="wins-text"></p>
+        <p id="losses-text"></p>
+        <p id="ties-text"></p>
+    </div>
+
+
+    <script type="text/javascript">
+        var computerChoices = ["r", "p", "s"];
+        var wins = 0;
+        var losses = 0;
+        var ties = 0;
+
+        var userChoiceText = document.getElementById("userchoice-text");
+        var computerChoiceText = document.getElementById("computerchoice-text");
+        var winsText = document.getElementById("wins-text");
+        var lossesText = document.getElementById("losses-text");
+        var tiesText = document.getElementById("ties-text");
+
+        document.onkeyup = function(event) {
+        var userGuess = event.key;
+        var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        if ((userGuess === "r") || (userGuess === "p") || (userGuess === "s")) {
+
+        userChoiceText.textContent = "You chose: " + userGuess;
+        computerChoiceText.textContent = "The computer chose: " + computerGuess;
+        winsText.textContent = "wins: " + wins;
+        lossesText.textContent = "losses: " + losses;
+        tiesText.textContent = "ties: " + ties;
+  }
+  else {
+    alert("Can only use r, p, or s!")
+  }
+    };
+    </script>
+</body>
+</html>
