@@ -29,7 +29,6 @@
         <p id="ties-text"></p>
     </div>
 
-
     <script type="text/javascript">
         var computerChoices = ["r", "p", "s"];
         var wins = 0;
@@ -46,6 +45,10 @@
         var userGuess = event.key;
         var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
         if ((userGuess === "r") || (userGuess === "p") || (userGuess === "s")) {
+        if ((userGuess === "r") && (computerGuess === "s")) {
+          wins++;
+        }
+        if ((userGuess === ""))
 
         userChoiceText.textContent = "You chose: " + userGuess;
         computerChoiceText.textContent = "The computer chose: " + computerGuess;
